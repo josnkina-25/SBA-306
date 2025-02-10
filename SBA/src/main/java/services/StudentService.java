@@ -28,7 +28,7 @@ public class StudentService implements StudentI {
     public void createStudent(Student student) {
         //    check if the email exist if not throws exception
         if(student.getEmail() == null || student.getEmail().isEmpty()){
-            throw new IllegalArgumentException("Student's mail cannot be empty");
+            throw new IllegalArgumentException("Student's email cannot be empty");
         }
         try (Session session = sessionFactory.openSession()) {
             Transaction tx =  session.beginTransaction();

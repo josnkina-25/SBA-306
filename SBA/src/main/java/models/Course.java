@@ -30,12 +30,9 @@ public class Course {
     @Column(name = "Instructor name", length = 50, nullable = false)
     private String instructor;
 
-//    public Course(String java, String rogerBoaitey) {
-//    }
-
     @ManyToMany(mappedBy = "courses", fetch = FetchType.EAGER, cascade = {CascadeType.DETACH, CascadeType.REMOVE, CascadeType.MERGE, CascadeType.PERSIST})
 
-    private Set<Student> students = new LinkedHashSet<>();
+    private Set<Student> students = new LinkedHashSet<>(); //
 public Course(String name, String instructor) {
     this.name = name;
     this.instructor = instructor;
